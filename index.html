@@ -4,13 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./src/app.js"></script>
-    <title>DeepGram</title>
+    <title>Cursed Detector!</title>
   </head>
   <body>
-    <div class="container">
-      <p id="para">Hello world</p>
-      <button id="btn">Click me</button>
-    </div>
+    <h1>Hello world</h1>
+    <div class="audio" id="audio"></div>
+    <button onclick="">Start recording</button>
+    <button onclick="">Stop recording</button>
   </body>
+  <script type="text/javascript">
+    var device = navigator.mediaDevices.getUserMedia({ audio: true });
+    var items = [];
+
+    device.then((stream) => {
+      var recorder = new MediaRecorder(stream);
+
+      recorder.ondataavailable = (e) => {
+        items.push(e.data);
+        if (recorder.state == "inactive") {
+          var blob = new Blob(items, { type: "audio/webm" });
+          var audio = document.getElementById("audio");
+          var mainAudio = document.createElement("audio");
+
+          mainAudio.setAttribute("controls", "controls");
+          audio.appendChild(mainAudio);
+          mainAudio.innerHTML =
+            '<source src="' +
+            URL.createObjectURL(blob) +
+            '" type="video/webm"/>';
+        }
+      };
+      recorder.start(100);
+      setTimeout(() => {
+        recorder.stop();
+      }, 5000);
+    });
+  </script>
 </html>
