@@ -17,13 +17,14 @@ const start = async () => {
         audio.appendChild(mainAudio);
 
         mainAudio.innerHTML =
-          '<source src="' + URL.createObjectURL(blob) + '" type="video/webm"/>';
+          '<source src="' + URL.createObjectURL(blob) + '" type="audio/webm"/>';
 
-        const audioURL = window.URL.createObjectURL(blob);
+        const audioURL = URL.createObjectURL(blob);
+        console.log(audioURL);
 
         const res = await axios.post("http://127.0.0.1:5000/response", {
           audioURL: audioURL,
-          mimeType: "video/webm",
+          mimeType: "audio/webm",
         });
         paragraph.innerText = res.data;
       }
