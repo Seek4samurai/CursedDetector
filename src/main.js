@@ -1,6 +1,16 @@
 const audio = document.getElementById("audio");
 const mainAudio = document.createElement("audio");
 const paragraph = document.getElementById("para");
+const form = document.querySelector("form");
+const startBtn = document.getElementById("startBtn");
+const submitBtn = document.getElementById("submitBtn");
+
+// Preventing from refresh
+startBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+});
+// -----------------------------------------
+
 var items = [];
 
 const start = async () => {
@@ -22,11 +32,14 @@ const start = async () => {
         const audioURL = URL.createObjectURL(blob);
         console.log(audioURL);
 
-        const res = await axios.post("http://127.0.0.1:5000/response", {
-          audioURL: audioURL,
-          mimeType: "audio/webm",
-        });
-        paragraph.innerText = res.data;
+        const formData = new FormData();
+        formData.append("files", "hey hey");
+
+        const res = await axios.post(
+          "http://127.0.0.1:5000/response",
+          formData
+        );
+        console.log(res.data);
       }
     };
     recorder.start(100);

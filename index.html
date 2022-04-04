@@ -8,9 +8,12 @@
   </head>
   <body>
     <h1>Hello world</h1>
-    <div id="para">Record a 10 second audio</div>
-    <div class="audio" id="audio"></div>
-    <button id="startBtn" onclick="start()">Start recording</button>
+    <form>
+      <label for="file">Select files</label>
+      <div id="para">Record a 10 second audio</div>
+      <div class="audio" id="audio"></div>
+      <button id="startBtn" onclick="start()">Start recording</button>
+    </form>
   </body>
   <script src="./src/axios.min.js"></script>
   <script src="./src/main.js"></script>
