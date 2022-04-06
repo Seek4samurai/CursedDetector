@@ -17,17 +17,19 @@
           <span></span>
         </div>
       </div>
-      <form
-        enctype="multipart/form-data"
-        action="http://127.0.0.1:5000/index.html"
-        method="POST"
-      >
+      <form id="data-form">
         <div class="formHolder">
           <input id="file-upload" value="Upload" type="file" name="file" />
         </div>
+        <p id="para" style="color: white"></p>
         <div class="splash">
-          <div class="splashBg"></div>
-          <div class="deepgram"></div>
+          <div class="splashBg">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="deepgram">
+            <img src="./public/DG-logo.svg" alt="deepgram" />
+          </div>
         </div>
         <div class="footer">
           <input id="submitBtn" type="submit" value="POST to server" />
