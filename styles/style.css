@@ -69,9 +69,104 @@ body {
   background-color: #ff0606;
 }
 
+.container .formHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem;
+}
+
 .container .formHolder input {
   color: #c4c4c4;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.container .splash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 604px;
+}
+
+.container .splash .splashBg {
+  position: relative;
+  top: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .splash .splashBg :first-child {
+  border-radius: 45% 40%;
+  width: 278px;
+  height: 320.81px;
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+  background: #fc4b86;
+}
+
+.container .splash .splashBg :last-child {
+  border-radius: 50% 40%;
+  width: 212.62px;
+  height: 255px;
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+  background: #ff8585;
+}
+
+.container .splash .deepgram {
+  position: relative;
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
+  width: auto;
+  height: 200px;
+  z-index: 99;
+}
+
+.container .splash .deepgram img {
+  height: 80%;
+  width: 100%;
+}
+
+.container .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.7rem;
+  color: #c4c4c4;
+}
+
+.container .footer input {
+  height: 70px;
+  padding: 0.4rem 5rem 0.4rem 0.4rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  background-color: #e4335e;
+}
+
+.container .footer h3 {
+  padding-left: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

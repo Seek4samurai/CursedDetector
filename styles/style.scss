@@ -8,6 +8,10 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+#para {
+  // display: none;
+}
+
 .container {
   position: absolute;
   top: 50%;
@@ -50,9 +54,71 @@ body {
       }
     }
   }
-  .formHolder input {
+  .formHolder {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    input {
+      color: $secondary-color;
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+  }
+  .splash {
+    display: flex;
+    flex-direction: column;
+    height: 604px;
+    .splashBg {
+      position: relative;
+      top: 35%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      :first-child {
+        border-radius: 45% 40%;
+        width: 278px;
+        height: 320.81px;
+        filter: blur(40px);
+        transform: translateX(20%);
+        background: #fc4b86;
+      }
+      :last-child {
+        border-radius: 50% 40%;
+        width: 212.62px;
+        height: 255px;
+        filter: blur(40px);
+        transform: translateX(-20%);
+        background: #ff8585;
+      }
+    }
+    .deepgram {
+      position: relative;
+      transform: translateY(-20%);
+      width: auto;
+      height: 200px;
+      z-index: 99;
+      img {
+        height: 80%;
+        width: 100%;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    font-size: 1.7rem;
     color: $secondary-color;
-    font-size: 1rem;
-    font-weight: bold;
+    input {
+      height: 70px;
+      padding: 0.4rem 5rem 0.4rem 0.4rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 3rem;
+      font-weight: 900;
+      color: $bg-color;
+      background-color: $primary-color;
+    }
+    h3 {
+      padding-left: 1rem;
+    }
   }
 }
