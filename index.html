@@ -8,7 +8,11 @@
     <title>Cursed Detector!</title>
   </head>
   <body>
-    <h2 id="para"></h2>
+    <div id="pop-menu" class="popup hide">
+      <h2>This File looks</h2>
+      <h1 id="para"></h1>
+      <button onclick="removePopUp()">Ok</button>
+    </div>
     <div class="container">
       <div class="navbar">
         <div class="heading">Cursed Detector</div>
@@ -20,7 +24,13 @@
       </div>
       <form id="data-form">
         <div class="formHolder">
-          <input id="file-upload" value="Upload" type="file" name="file" />
+          <input
+            id="file-upload"
+            value="Upload"
+            type="file"
+            name="file"
+            accept="audio"
+          />
         </div>
         <div class="splash">
           <div class="splashBg">
@@ -32,7 +42,12 @@
           </div>
         </div>
         <div class="footer">
-          <input id="submitBtn" type="submit" value="Check" />
+          <input
+            id="submitBtn"
+            type="submit"
+            value="Check"
+            style="cursor: pointer"
+          />
           <h3>if there are any Cursed Words?</h3>
         </div>
       </form>
