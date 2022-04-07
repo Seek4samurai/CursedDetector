@@ -8,8 +8,41 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-#para {
-  // display: none;
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background-color: $bg-color;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 20px 20px,
+    rgba(0, 0, 0, 0.75) 0px 10px 10px;
+  z-index: 100;
+  button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  h2 {
+    margin: 0;
+    color: $secondary-color;
+  }
+  h1 {
+    color: #fc4b86;
+  }
+  .safe {
+    color: #30c951;
+  }
+}
+.hide {
+  display: none;
 }
 
 .container {
