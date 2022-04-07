@@ -3,13 +3,16 @@ const form = document.getElementById("data-form");
 const fileInput = document.getElementById("file-upload");
 const para = document.getElementById("para");
 const popup = document.getElementById("pop-menu");
+const popupMessage = document.getElementById("popup-message");
 const okBtn = document.getElementById("okBtn");
+const loading = document.getElementById("loading");
 
 const submitForm = async (e) => {
   e.preventDefault();
 
   // No file provided
   if (fileInput.files[0] == null) {
+    loading.classList.add("hide");
     popup.classList.remove("hide");
     para.classList.remove("safe");
     para.innerText = "Please provide a valid file :(";
@@ -19,6 +22,7 @@ const submitForm = async (e) => {
       try {
         const formData = new FormData();
         formData.append("file", fileInput.files[0]);
+        popup.classList.remove("hide");
 
         // Check if the file is provided or not
         if (fileInput.files[0]) {
@@ -32,15 +36,20 @@ const submitForm = async (e) => {
             }
           );
 
-          popup.classList.remove("hide");
           if (res.data.message == "Safe!") {
+            loading.classList.add("hide");
+            popupMessage.classList.remove("hide");
             para.classList.add("safe");
             para.innerText = res.data.message;
           }
           if (res.data.message == "Not safe!") {
+            loading.classList.add("hide");
+            popupMessage.classList.remove("hide");
             para.classList.remove("safe");
             para.innerText = res.data.message;
           } else {
+            loading.classList.add("hide");
+            popupMessage.classList.remove("hide");
             para.classList.remove("safe");
             para.innerText = "Something went wrong :(";
           }
@@ -50,6 +59,7 @@ const submitForm = async (e) => {
         console.log(error);
       }
     } else {
+      loading.classList.add("hide");
       popup.classList.remove("hide");
       para.classList.remove("safe");
       para.innerText = "File is not an Audio :(";
