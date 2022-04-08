@@ -27,7 +27,7 @@ const submitForm = async (e) => {
         // Check if the file is provided or not
         if (fileInput.files[0]) {
           const res = await axios.post(
-            "http://127.0.0.1:5000/response",
+            "https://cursed-detector.herokuapp.com/response",
             formData,
             {
               headers: {
